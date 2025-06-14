@@ -194,7 +194,7 @@ export const NavbarLogo = () => {
     <a
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
-      <div className="text-2xl">🧠</div>
+      <img src="/images/logo.png" alt="MUDO" className="h-8 w-8" />
       <span className="font-bold text-xl text-black dark:text-white">MUDO</span>
     </a>
   );

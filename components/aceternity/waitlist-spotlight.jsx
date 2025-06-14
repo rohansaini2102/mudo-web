@@ -1,59 +1,46 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { CardSpotlight } from "../ui/card-spotlight";
+import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { Button } from "../ui/moving-border";
 
 export function WaitlistSpotlight() {
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      console.log("Email submitted:", email);
-    }
-  };
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center">
-      <CardSpotlight 
-        className="h-screen w-full bg-black border-none p-0" 
-        color="#262626"
-        radius={350}
-      >
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full px-8">
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-12">
-            Join the waitlist
-          </h1>
+    <section className="min-h-screen flex items-center justify-center">
+      <div className="text-center flex flex-col items-center justify-center h-full px-8">
+          <div className="mb-12">
+            <TextGenerateEffect 
+              words="Join the waitlist to get latest updates and early access to MUDO" 
+              className="text-2xl md:text-4xl font-bold text-white text-center"
+            />
+          </div>
           
-          {!isSubmitted ? (
-            <div className="space-y-8 w-full max-w-md">
-              <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="w-full max-w-lg">
+            <form action="https://formspree.io/f/mldnnrwn" method="POST" className="flex gap-4">
+              <Button
+                as="div"
+                borderRadius="1.75rem"
+                containerClassName="flex-1 h-16"
+                className="bg-black/80 border-neutral-700 text-white relative"
+              >
                 <input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
                   placeholder="your@email.com"
-                  className="w-full px-8 py-6 bg-black border border-neutral-600 rounded-xl text-white text-lg placeholder-neutral-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-all duration-200"
+                  className="w-full h-full bg-transparent text-white text-lg placeholder-white/60 focus:outline-none px-6"
                   required
                 />
-                <button
-                  type="submit"
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 px-8 rounded-xl text-lg transition-all duration-200 transform hover:scale-105"
-                >
-                  Get Early Access
-                </button>
-              </form>
-              
-            </div>
-          ) : (
-            <div className="space-y-6">
-              <div className="text-indigo-400 text-8xl mb-6">✓</div>
-              <h2 className="text-3xl font-bold text-white">You're in!</h2>
-            </div>
-          )}
-        </div>
-      </CardSpotlight>
+              </Button>
+              <button
+                type="submit"
+                className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25"
+              >
+                Join Waitlist
+              </button>
+            </form>
+          </div>
+      </div>
     </section>
   );
 }

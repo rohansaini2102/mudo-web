@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 
-export function ThreeDCardDemo() {
+export function InsightsCardDemo() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -27,14 +26,13 @@ export function ThreeDCardDemo() {
         <CardItem
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white">
-          <img src="/images/logo.png" alt="MUDO" className="h-6 w-6 inline mr-2" />
-          AI Therapist - Dr. Maya
+          📊 MUDO Insights
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
           className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Your 24/7 mental health companion who remembers your journey and speaks your language
+          Track your mental health journey with weekly, monthly, and personalized insights
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <div 
@@ -70,23 +68,23 @@ export function ThreeDCardDemo() {
               )}
             </motion.div>
             <div className="text-center text-white p-8 relative z-10">
-              <div className="mb-4 flex justify-center">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/30 shadow-lg">
-                  <Image 
-                    src="/images/therapist.png"
-                    alt="Dr. Maya - AI Therapist"
-                    fill
-                    className="object-cover"
-                    sizes="80px"
-                  />
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                  <div className="text-lg font-bold">78%</div>
+                  <div className="text-xs opacity-80">Weekly Progress</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                  <div className="text-lg font-bold">+15%</div>
+                  <div className="text-xs opacity-80">Monthly Growth</div>
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Dr. Maya</h3>
-              <p className="text-sm opacity-90">Available anytime, no appointment needed</p>
-              <div className="flex justify-center gap-2 mt-4">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse delay-100"></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse delay-200"></div>
+              <h3 className="text-xl font-bold mb-2">Your Journey</h3>
+              <p className="text-sm opacity-90">Personalized analytics and trends</p>
+              <div className="flex justify-center gap-1 mt-4">
+                <div className="w-8 h-1 bg-green-400 rounded-full"></div>
+                <div className="w-6 h-1 bg-yellow-400 rounded-full"></div>
+                <div className="w-4 h-1 bg-blue-400 rounded-full"></div>
+                <div className="w-3 h-1 bg-purple-400 rounded-full"></div>
               </div>
             </div>
           </div>
@@ -97,13 +95,13 @@ export function ThreeDCardDemo() {
             as="a"
             href="#"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white hover:underline">
-            Learn more →
+            View Reports →
           </CardItem>
           <CardItem
             translateZ={20}
             as="button"
             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white text-xs font-bold transition-colors">
-            Join Early Access
+            Join Waitlist
           </CardItem>
         </div>
       </CardBody>

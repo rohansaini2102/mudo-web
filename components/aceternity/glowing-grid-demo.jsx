@@ -2,10 +2,11 @@
 import { Brain, Heart, Users, TrendingUp, Shield, Zap } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { MovingBorder } from "@/components/ui/moving-border";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export function GlowingGridDemo() {
   return (
-    <section className="py-20 px-8 bg-black">
+    <section className="min-h-screen flex items-center justify-center py-20 px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
@@ -79,7 +80,7 @@ const GridItem = ({
           inactiveZone={0.01}
         />
         
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-lg bg-white/[0.12] backdrop-blur-2xl p-6 md:p-6 shadow-[0px_0px_50px_0px_rgba(255,255,255,0.1)] border border-white/[0.2] glass-effect">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-lg bg-black backdrop-blur-2xl p-6 md:p-6 shadow-[0px_0px_50px_0px_rgba(0,0,0,0.3)] border border-neutral-800">
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div className="w-fit rounded-md border border-white/[0.25] bg-white/[0.15] backdrop-blur-sm p-2">
               {icon}
