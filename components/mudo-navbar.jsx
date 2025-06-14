@@ -16,20 +16,27 @@ import { useState } from "react";
 export function MudoNavbar() {
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
-    },
-    {
-      name: "AI Therapist",
+      name: "AI Therapist", 
       link: "#ai-therapist",
     },
     {
-      name: "Privacy",
-      link: "#privacy",
+      name: "How It Works",
+      link: "#how-it-works",
+    },
+    {
+      name: "Features",
+      link: "#why-choose-mudo",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Navbar>
@@ -38,8 +45,13 @@ export function MudoNavbar() {
         <NavbarLogo />
         <NavItems items={navItems} />
         <div className="flex items-center gap-4">
-          <NavbarButton variant="secondary" as="button">Sign In</NavbarButton>
-          <NavbarButton variant="dark" as="button">Join Waitlist</NavbarButton>
+          <NavbarButton 
+            variant="dark" 
+            as="button"
+            onClick={() => scrollToSection('#waitlist')}
+          >
+            Join Waitlist
+          </NavbarButton>
         </div>
       </NavBody>
 
@@ -69,15 +81,10 @@ export function MudoNavbar() {
           ))}
           <div className="flex w-full flex-col gap-4">
             <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
-              variant="secondary"
-              className="w-full"
-              as="button"
-            >
-              Sign In
-            </NavbarButton>
-            <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                scrollToSection('#waitlist');
+              }}
               variant="dark"
               className="w-full"
               as="button"

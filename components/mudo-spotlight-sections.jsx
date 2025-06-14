@@ -14,13 +14,19 @@ export function MudoSpotlightSections() {
     >
         <div className="relative z-20">
           {/* How MUDO Works Section */}
-          <CardSpotlightDemo />
+          <section id="how-it-works">
+            <CardSpotlightDemo />
+          </section>
           
           {/* Why Choose MUDO Section */}
-          <GlowingGridDemo />
+          <section id="why-choose-mudo">
+            <GlowingGridDemo />
+          </section>
           
           {/* Join Waitlist Section */}
-          <WaitlistSpotlight />
+          <section id="waitlist">
+            <WaitlistSpotlight />
+          </section>
         </div>
     </ConstantSpotlight>
   );

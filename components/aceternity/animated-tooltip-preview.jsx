@@ -52,10 +52,10 @@ export function AnimatedTooltipPreview() {
     <div className="py-20 bg-gradient-to-b from-white to-black">
       <div className="text-center mb-10 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
-          Join 10,000+ Gen Zers Taking Control
+          See What's Possible with MUDO
         </h2>
         <p className="text-lg text-neutral-600">
-          Real people, real transformations with MUDO
+          Imagine your transformation journey
         </p>
       </div>
       <div className="flex flex-row items-center justify-center mb-10 w-full">

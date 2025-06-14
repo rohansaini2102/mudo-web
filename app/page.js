@@ -12,14 +12,18 @@ export default function Home() {
       <MudoNavbar />
       <main>
         <AuroraBackgroundDemo />
-        <section className="py-20">
+        <section id="features" className="py-20">
           <div className="flex flex-wrap justify-center gap-8 px-4">
-            <ThreeDCardDemo />
+            <div id="ai-therapist">
+              <ThreeDCardDemo />
+            </div>
             <InsightsCardDemo />
           </div>
         </section>
         <CanvasRevealEffectDemo />
-        <AnimatedTooltipPreview />
+        <section id="testimonials">
+          <AnimatedTooltipPreview />
+        </section>
         <MudoSpotlightSections />
       </main>
     </>
